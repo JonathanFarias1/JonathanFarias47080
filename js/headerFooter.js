@@ -3,7 +3,7 @@ encabezado.classList.remove("d-none");
 
 const encabezadoBody = encabezado.querySelector("nav");
 encabezadoBody.innerHTML = `<a class="navbar-brand" href="#">
-    <img src="/images/cryptoMineLogo.png" alt="Logo">
+    <img src="images/cryptoMineLogo.png" alt="Logo">
 </a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,10 +12,10 @@ encabezadoBody.innerHTML = `<a class="navbar-brand" href="#">
 <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-            <a class="nav-link" href="/index.html">Inicio</a>
+            <a class="nav-link" href="index.html">Inicio</a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" href="/pages/cotizadorPrincipal.html">Inversion Basica</a>
+            <a class="nav-link" href="pages/cotizadorPrincipal.html">Inversion Basica</a>
         </li>
 
         <li class="nav-item dropdown">
@@ -23,9 +23,9 @@ encabezadoBody.innerHTML = `<a class="navbar-brand" href="#">
                 Servicio Cotizador de Asics
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/pages/cotizadorMaquinas.html">Propuesta de Maquinas</a>
-                <a class="dropdown-item" href="/pages/ultimaCotizacion.html">UltimaCotizacion</a>
-                <a class="dropdown-item" href="/pages/valoresIniciales.html">Configuracion Propiedades</a>
+                <a class="dropdown-item" href="pages/cotizadorMaquinas.html">Propuesta de Maquinas</a>
+                <a class="dropdown-item" href="pages/ultimaCotizacion.html">UltimaCotizacion</a>
+                <a class="dropdown-item" href="pages/valoresIniciales.html">Configuracion Propiedades</a>
             </div>
         </li>
         <li class="nav-item">
