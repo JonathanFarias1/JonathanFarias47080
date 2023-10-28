@@ -3,7 +3,7 @@ encabezado.classList.remove("d-none");
 
 const encabezadoBody = encabezado.querySelector("nav");
 encabezadoBody.innerHTML = `<a class="navbar-brand" href="#">
-    <img src="../images/cryptoMineLogo.png" alt="Logo">
+    <img src="./images/cryptoMineLogo.png" alt="Logo">
 </a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
