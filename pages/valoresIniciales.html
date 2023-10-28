@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Configuración de Valores Iniciales</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header id="navegacion">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        </nav>   
+    </header>
+    <div class="container mt-5">
+        <h1 class="text-center">Configuración de Valores Iniciales</h1>
+        <form id="contenidoActualizacion">
+            <div class="form-group">
+                <label for="costoEnergia">Costo de Energía (USD):</label>
+                <input type="number" class="form-control" id="costoEnergia" step="0.01">
+            </div>
+            <div class="form-group">
+                <label for="costoRed">Costo de Red (USD):</label>
+                <input type="number" class="form-control" id="costoRed" step="0.01">
+            </div>
+            <div class="form-group">
+                <label for="costoManoObra">Costo de Mano de Obra (USD):</label>
+                <input type="number" class="form-control" id="costoManoObra" step="0.01">
+            </div>
+            <div class="form-group">
+                <label for="costoPorTH">Costo por TH (USD):</label>
+                <input type="number" class="form-control" id="costoPorTH" step="0.01">
+            </div>
+            <div class="form-group">
+                <label for="terahashes">Terahashes:</label>
+                <input type="number" class="form-control" id="terahashes" step="1">
+            </div>
+            <div class="form-group">
+                <label for="valorBitcoin">Valor del Bitcoin (USD):</label>
+                <input type="number" class="form-control" id="valorBitcoin" step="0.01">
+            </div>
+            <div class="form-group">
+                <label for="gananciaPorTH">Ganancia por TH (BTC):</label>
+                <input type="number" class="form-control" id="gananciaPorTH" step="0.00000001">
+            </div>
+            <div class="form-group">
+                <label for="comisionHosting">Comisión del Hosting (%):</label>
+                <input type="number" class="form-control" id="comisionHosting" step="0.01">
+            </div>
+            <div class="form-group">
+                <label for="tipoCambio">Tipo de Cambio (USD a MXN):</label>
+                <input type="number" class="form-control" id="tipoCambio" step="0.01">
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar Configuración</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/headerFooter.js"></script>
+
+</body>
+</html>
