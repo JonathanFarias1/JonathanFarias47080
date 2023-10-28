@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         alert("Valores guardados correctamente.");
 
-            window.location.href = "./pages/cotizadorMaquinas.html"; 
+            window.location.href = "/pages/cotizadorMaquinas.html"; 
 
     });
 });
