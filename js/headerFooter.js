@@ -12,7 +12,7 @@ encabezadoBody.innerHTML = `<a class="navbar-brand" href="#">
 <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-            <a class="nav-link" href="../index.html">Inicio</a>
+            <a class="nav-link" href="./index.html">Inicio</a>
         </li>
         <li class="nav-item active">
             <a class="nav-link" href="../pages/cotizadorPrincipal.html">Inversion Basica</a>
