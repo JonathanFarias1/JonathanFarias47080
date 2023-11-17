@@ -66,7 +66,7 @@ function calcularInversion() {
         const tbody = document.createElement('tbody');
         inversiones.forEach(inversion => {
             const tr = document.createElement('tr');
-            tr.innerHTML = `<td>${inversion.Mes}</td><td>${inversion.GananciaMensual.toFixed(2)}</td><td>${inversion.MontoAcumulado.toFixed(2)}</td><td>${inversion.RetornoCapital.toFixed(2)}</td>`;
+            tr.innerHTML = `<td>${inversion.Mes}</td><td>${numeroComas(inversion.GananciaMensual.toFixed(2).toLocaleString())}</td><td>${numeroComas(inversion.MontoAcumulado.toFixed(2).toLocaleString())}</td><td>${numeroComas(inversion.RetornoCapital.toFixed(2).toLocaleString())}</td>`;
             tbody.appendChild(tr);
         });
     
@@ -91,3 +91,10 @@ function calcularInversion() {
 
     }
 }
+
+
+
+function numeroComas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+

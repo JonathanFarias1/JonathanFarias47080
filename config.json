@@ -1,0 +1,11 @@
+{
+    "costoEnergia": 500,
+    "costoRed": 40,
+    "costoManoObra": 10,
+    "costoPorTH": 11.3,
+    "terahashes": 100,
+    "valorBitcoin": 34000,
+    "gananciaPorTH": 0.00000215,
+    "comisionHosting": 0.0,
+    "tipoCambio": 18.13
+  }

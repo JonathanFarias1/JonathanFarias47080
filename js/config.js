@@ -1,67 +1,71 @@
-
 document.addEventListener("DOMContentLoaded", function() {
     const contenidoActualizacion = document.getElementById("contenidoActualizacion");
 
-        let costoEnergia = localStorage.getItem("costoEnergia") || 400;
-        let costoRed = localStorage.getItem("costoRed") || 40;
-        let costoManoObra = localStorage.getItem("costoManoObra") || 10;
-        let costoPorTH = localStorage.getItem("costoPorTH") || 11.3;
-        let terahashes = localStorage.getItem("terahashes") || 100;
-        let valorBitcoin = localStorage.getItem("valorBitcoin") || 34000;
-        let gananciaPorTH = localStorage.getItem("gananciaPorTH") || 0.00000215;
-        let comisionHosting = localStorage.getItem("comisionHosting") || 0.0;
-        let tipoCambio = localStorage.getItem("tipoCambio") || 18.13;
+ 
 
-        const costoEnergiaForm = document.getElementById("costoEnergia");
-        const costoRedForm = document.getElementById("costoRed");
-        const costoManoObraForm = document.getElementById("costoManoObra");
-        const costoPorTHForm = document.getElementById("costoPorTH");
-        const terahashesForm = document.getElementById("terahashes");
-        const valorBitcoinForm = document.getElementById("valorBitcoin");
-        const gananciaPorTHForm = document.getElementById("gananciaPorTH");
-        const comisionHostingForm = document.getElementById("comisionHosting");
-        const tipoCambioForm = document.getElementById("tipoCambio");
+    let valoresLocalStorage = {
+        costoEnergia: localStorage.getItem("costoEnergia"),
+        costoRed: localStorage.getItem("costoRed"),
+        costoManoObra: localStorage.getItem("costoManoObra"),
+        costoPorTH: localStorage.getItem("costoPorTH"),
+        terahashes: localStorage.getItem("terahashes"),
+        valorBitcoin: localStorage.getItem("valorBitcoin"),
+        gananciaPorTH: localStorage.getItem("gananciaPorTH"),
+        comisionHosting: localStorage.getItem("comisionHosting"),
+        tipoCambio: localStorage.getItem("tipoCambio")
+    };
 
 
-        costoEnergiaForm.value = costoEnergia;
-        costoRedForm.value = costoRed;
-        costoManoObraForm.value = costoManoObra;
-        costoPorTHForm.value = costoPorTH;
-        terahashesForm.value = terahashes;
-        valorBitcoinForm.value = valorBitcoin;
-        gananciaPorTHForm.value = gananciaPorTH;
-        comisionHostingForm.value = comisionHosting;
-        tipoCambioForm.value = tipoCambio;
+    const clearLocalStorage = () => {
+        Object.keys(valoresLocalStorage).forEach(key => {
+            if (valoresLocalStorage[key] === 'null' || valoresLocalStorage[key] === null || isNaN(valoresLocalStorage[key])) {
+                localStorage.removeItem(key);
+            }
+        });
+    };
 
+    clearLocalStorage(); // Limpiar los valores nulos y NaN antes de comprobar si son válidos
 
-        contenidoActualizacion.addEventListener("submit", function(evento) {
+    const formularios = {
+        costoEnergia: document.getElementById("costoEnergia"),
+        costoRed: document.getElementById("costoRed"),
+        costoManoObra: document.getElementById("costoManoObra"),
+        costoPorTH: document.getElementById("costoPorTH"),
+        terahashes: document.getElementById("terahashes"),
+        valorBitcoin: document.getElementById("valorBitcoin"),
+        gananciaPorTH: document.getElementById("gananciaPorTH"),
+        comisionHosting: document.getElementById("comisionHosting"),
+        tipoCambio: document.getElementById("tipoCambio")
+    };
+
+    contenidoActualizacion.addEventListener("submit", function(evento) {
         evento.preventDefault();
 
-        costoEnergia = costoEnergiaForm.value;
-        costoRed = costoRedForm.value;
-        costoManoObra = costoManoObraForm.value;
-        costoPorTH = costoPorTHForm.value;
-        terahashes = terahashesForm.value;
-        valorBitcoin = valorBitcoinForm.value;
-        gananciaPorTH = gananciaPorTHForm.value;
-        comisionHosting = comisionHostingForm.value;
-        tipoCambio = tipoCambioForm.value;
-
-
-        localStorage.setItem("costoEnergia", costoEnergia);
-        localStorage.setItem("costoRed", costoRed);
-        localStorage.setItem("costoManoObra", costoManoObra);
-        localStorage.setItem("costoPorTH", costoPorTH);
-        localStorage.setItem("terahashes", terahashes);
-        localStorage.setItem("valorBitcoin", valorBitcoin);
-        localStorage.setItem("gananciaPorTH", gananciaPorTH);
-        localStorage.setItem("comisionHosting", comisionHosting);
-        localStorage.setItem("tipoCambio", tipoCambio);
+        Object.keys(valoresLocalStorage).forEach(key => {
+            valoresLocalStorage[key] = formularios[key].value;
+            localStorage.setItem(key, valoresLocalStorage[key]);
+        });
 
         alert("Valores guardados correctamente.");
-
-            window.location.href = "../pages/cotizadorMaquinas.html"; 
-
+        window.location.href = "../pages/cotizadorMaquinas.html";
     });
-});
 
+
+    Object.keys(valoresLocalStorage).forEach(key => {
+        if (!valoresLocalStorage[key]) {
+            fetch('../config.json')
+                .then(response => response.json())
+                .then(data => {
+                    valoresLocalStorage[key] = parseFloat(data[key]);
+                    formularios[key].value = valoresLocalStorage[key];
+                    localStorage.setItem(key, valoresLocalStorage[key]);
+                })
+                .catch(error => console.log('Error al obtener el archivo JSON:', error));
+        } else {
+            valoresLocalStorage[key] = parseFloat(valoresLocalStorage[key]);
+            formularios[key].value = valoresLocalStorage[key];
+        }
+    }); 
+
+    
+});

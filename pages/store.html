@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda de Asics</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+
+    <header id="navegacion">
+        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#"><img src="../images/cryptoMineLogo.png" alt="Logo"> </a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                      <a class="nav-link" href="../index.html">Inicio</a>
+                  </li>
+                  <li class="nav-item active">
+                      <a class="nav-link" href="./cotizadorPrincipal.html">Inversión Básica</a>
+                  </li>
+          
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Servicio Cotizador de Asics
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="./cotizadorMaquinas.html">Propuesta de Máquinas</a>
+                          <a class="dropdown-item" href="./ultimaCotizacion.html">Última Cotización</a>
+                          <a class="dropdown-item" href="./valoresIniciales.html">Configuración Propiedades</a>
+                      </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       Store
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="./store.html">Tienda De Asics</a>
+                        <a class="dropdown-item" href="./carrito.html">Carrito</a>
+                    </div>
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./contacto.html">Contacto</a>
+                </li>
+              </ul>
+          </div>
+          </nav>  
+    </header>
+
+    <div class="container mt-5">
+        <h2 class="espaciado">Catálogo de Productos <a href="./carrito.html" class="float-right"><i class="fas fa-shopping-cart"></i></a></h2>
+        
+        <div class="row" id="product-list">
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="../js/store.js"></script>
+    
+</body>
+</html>

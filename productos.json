@@ -1,0 +1,40 @@
+{
+    "productos": [
+      {
+        "nombre": "Bitmain S19 pro",
+        "precio": "1000",
+        "poder": "100 th",
+        "imagen": "../images/bitmain.jpg"
+      },
+      {
+        "nombre": "Bitmain S19 XP",
+        "precio": "3000",
+        "poder": "220 th",
+        "imagen": "../images/bitmain.jpg"
+      },
+      {
+        "nombre": "Bitmain S19 J pro",
+        "precio": "1500",
+        "poder": "110 th",
+        "imagen": "../images/bitmain.jpg"
+      },
+      {
+        "nombre": "Bitmain S19",
+        "precio": "800",
+        "poder": "95 th",
+        "imagen": "../images/bitmain.jpg"
+      },
+      {
+        "nombre": "Bitmain S19 Hydro",
+        "precio": "4000",
+        "poder": "250 th",
+        "imagen": "../images/bitmainHydro.jpg"
+      },
+      {
+        "nombre": "Bitmain S19 Hydro pro",
+        "precio": "4800",
+        "poder": "290 th",
+        "imagen": "../images/bitmainHydro.jpg"
+      }
+    ]
+  }

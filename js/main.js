@@ -1,7 +1,15 @@
-
 document.addEventListener("DOMContentLoaded", function() {
-    document.dispatchEvent(new Event("mostrarTablaResultado"));
+    const costoEnergia = localStorage.getItem("costoEnergia");
+
+    if (costoEnergia === null || isNaN(parseFloat(costoEnergia))) {
+        window.location.href = "../pages/valoresIniciales.html";
+    } else {
+        document.dispatchEvent(new Event("mostrarTablaResultado"));
+    }
 });
+
+
+
 
 document.addEventListener("mostrarTablaResultado", function() {
     const cantidadEquiposInput = document.getElementById("cantidadEquipos");
@@ -9,16 +17,16 @@ document.addEventListener("mostrarTablaResultado", function() {
     const resultadoTable = document.getElementById("resultado");
     const resultadoBody = resultadoTable.querySelector("tbody");
 
-    let costoEnergia = localStorage.getItem("costoEnergia") || 400;
-    let costoRed = localStorage.getItem("costoRed") || 40;
-    let costoManoObra = localStorage.getItem("costoManoObra") || 10;
-    let costoPorTH = localStorage.getItem("costoPorTH") || 11.3;
-    let terahashes = localStorage.getItem("terahashes") || 100;
+    let costoEnergia = localStorage.getItem("costoEnergia");
+    let costoRed = localStorage.getItem("costoRed");
+    let costoManoObra = localStorage.getItem("costoManoObra");
+    let costoPorTH = localStorage.getItem("costoPorTH");
+    let terahashes = localStorage.getItem("terahashes");
     let precioEquipo = costoPorTH*terahashes;
-    let valorBitcoin = localStorage.getItem("valorBitcoin") || 34000;
-    let gananciaPorTH = localStorage.getItem("gananciaPorTH") || 0.00000215;
-    let comisionHosting = localStorage.getItem("comisionHosting") || 0.20;
-    let tipoCambio = localStorage.getItem("tipoCambio") || 18.13;
+    let valorBitcoin = localStorage.getItem("valorBitcoin");
+    let gananciaPorTH = localStorage.getItem("gananciaPorTH");
+    let comisionHosting = localStorage.getItem("comisionHosting");
+    let tipoCambio = localStorage.getItem("tipoCambio");
 
 
 localStorage.setItem("costoEnergia", costoEnergia);
@@ -272,5 +280,8 @@ localStorage.setItem("tipoCambio", tipoCambio);
             alert("Ingresa una cantidad válida de equipos.");
         }
     });
+    
+
+
 });
 

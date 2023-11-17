@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <header id="navegacion">
+        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#"><img src="../images/cryptoMineLogo.png" alt="Logo"> </a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                      <a class="nav-link" href="../index.html">Inicio</a>
+                  </li>
+                  <li class="nav-item active">
+                      <a class="nav-link" href="./cotizadorPrincipal.html">Inversión Básica</a>
+                  </li>
+          
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Servicio Cotizador de Asics
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="./cotizadorMaquinas.html">Propuesta de Máquinas</a>
+                          <a class="dropdown-item" href="./ultimaCotizacion.html">Última Cotización</a>
+                          <a class="dropdown-item" href="./valoresIniciales.html">Configuración Propiedades</a>
+                      </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       Store
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="./store.html">Tienda De Asics</a>
+                        <a class="dropdown-item" href="./carrito.html">Carrito</a>
+                    </div>
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./contacto.html">Contacto</a>
+                </li>
+              </ul>
+          </div>
+          </nav>  
+    </header>
+
+    <div class="container mt-5">
+        <h2 class="espaciado">Carrito de Compras <a href="../pages/store.html"  class="float-right"><i class="fas fa-shopping-cart"></i> Seguir comprando
+        </a></h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Artículo</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="articulos">
+            </tbody>
+        </table>
+        <div id="total" class="alert alert-success mt-3 ">
+        </div>
+        <button type="button" class="btn btn-success mt-3" id="btnFinalizarCompra">
+            <i class="fas fa-credit-card"></i> Finalizar Compra
+        </button>
+
+        <div id="formularioPago" class="mt-5" style="display: none;">
+            
+            <form>
+                <h3 class="mb-4">Dirección de Entrega</h3>
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Nombre Completo">
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo Electronico</label>
+                    <input type="text" class="form-control" id="correo" placeholder="Correo">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Telefono</label>
+                    <input type="number" class="form-control" id="telefono" placeholder="Telefono">
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" class="form-control" id="direccion" placeholder="Dirección">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="ciudad">Ciudad</label>
+                        <input type="text" class="form-control" id="ciudad" placeholder="Ciudad">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="codigoPostal">Código Postal</label>
+                        <input type="text" class="form-control" id="codigoPostal" placeholder="Código Postal">
+                    </div>
+                </div>
+
+
+                <h3 class="mb-4">Método de Pago</h3>
+                <div class="form-group">
+                    <label for="numeroTarjeta">Número de Tarjeta</label>
+                    <input type="text" class="form-control" id="numeroTarjeta" placeholder="Ingrese el número de tarjeta">
+                </div>
+                <div class="form-group">
+                    <label for="nombreTitular">Nombre del Titular</label>
+                    <input type="text" class="form-control" id="nombreTitular" placeholder="Ingrese el nombre del titular">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="fechaExpiracion">Fecha de Expiración</label>
+                        <input type="text" class="form-control" id="fechaExpiracion" placeholder="MM/AA">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="codigoSeguridad">Código de Seguridad</label>
+                        <input type="text" class="form-control" id="codigoSeguridad" placeholder="CVC">
+                    </div>
+                </div>
+                <button type="button" class="btn btn-success" id="btnComprar">Comprar</button>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="../js/carrito.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    
+</body>
+</html>

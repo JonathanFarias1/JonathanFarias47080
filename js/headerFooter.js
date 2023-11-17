@@ -1,9 +1,6 @@
 //EN REVISION PARA IMPLEMENTACION EN PRODUCTIVO*****************************
 
 
-// const baseRoute = window.location.origin + window.location.pathname.substring(0, window.location.pathname.lastIndexOf("/"));
-
-
 // const encabezado = document.getElementById("navegacion");
 // encabezado.classList.remove("d-none");
 
