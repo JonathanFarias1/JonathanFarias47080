@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     };
 
-    clearLocalStorage(); // Limpiar los valores nulos y NaN antes de comprobar si son válidos
+    clearLocalStorage(); 
 
     const formularios = {
         costoEnergia: document.getElementById("costoEnergia"),
